@@ -1,7 +1,14 @@
-# Analog-Clock-JavaScript
+# Real-Time-Stock-Price-Chart
 
-This is a personal project I worked on. I used HTML, CSS, and JavaScript to make it. This was an exercise as a part of the JavaScript Essential training course on LinkedIn learning by Morten Rand Hendriksen. Below is a screenshot:
+This is a Single page client-side app (SPA) to display real time stock price using HTML, CSS, JavaScript and JQuery. 
+Features:
+- This application lets you provide the name of the stock that you want to add to the chart and updates its price every 5 seconds.
+- The stock price is fetched using JQuery from the stock reporting API Finnhub.io
+- The stock price is displayed using Google charts
+This project was originally made in JSfiddle: https://jsfiddle.net/iamsr/jwzku2c3/192/
 
-![Clock](Images/analogclock.png) 
+The demo of the project is shown below:
+
+![Demo](https://github.com/i-am-SR/Real-Time-Stock-Price-Chart/blob/master/gif/stockchart.gif) 
 
 
