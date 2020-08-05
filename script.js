@@ -11,3 +11,11 @@ arr.push(new Array('Stock', 'Current Price', {
 
 let mySet = new Set();
 let i; // index used for update of prices
+
+function addtoList() { // Function to update the display above the chart
+  //console.log("addtoList called");
+  mylist.appendChild(listElement);
+  listItem = document.createElement('li');
+  listItem.innerHTML = arr[arr.length - 1][0];
+  listElement.appendChild(listItem);
+}
