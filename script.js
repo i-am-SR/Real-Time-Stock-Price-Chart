@@ -52,3 +52,10 @@ function getCurrPrice(stock) {	//using jQuery to find the current price of the s
     });
     //plot();
 }
+
+function updatePrices() { // Function to update the display above the chart
+  //console.log("updatePrices called");
+  for (i = 1; i < arr.length; i++) {
+    getCurrPrice(arr[i][0]);
+  }
+}
