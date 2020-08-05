@@ -105,3 +105,8 @@ function plot() { //Function to plot the bar chart and update the stock prices e
     setTimeout(plot, 5000); // refresh the values after every 5 seconds
   }
 }
+
+addButton.addEventListener("click", function() {	// When the add button is pressed, get the price and plot
+  getCurrPrice(stocktext.value);
+  plot();
+}, false);
