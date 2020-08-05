@@ -59,3 +59,49 @@ function updatePrices() { // Function to update the display above the chart
     getCurrPrice(arr[i][0]);
   }
 }
+
+google.charts.load('current', {	//using google charts
+  packages: ['corechart']
+});
+google.charts.setOnLoadCallback(plot);
+
+function plot() { //Function to plot the bar chart and update the stock prices every 5 minutes.
+  //console.log("plotNow called");
+  if (arr.length > 1) { //plot if we have stocks in the array
+    updatePrices();
+    var data = google.visualization.arrayToDataTable(arr);
+
+    var view = new google.visualization.DataView(data);
+    view.setColumns([0, 1,
+      {
+        calc: "stringify",
+        sourceColumn: 1,
+        type: "string",
+        role: "annotation"
+      },
+      2
+    ]);
+
+    var properties = {
+      title: 'Stock Prices',
+      chartArea: {
+        width: '50%'
+      },
+      hAxis: {
+        title: 'Price in USD',
+        minValue: 0
+      },
+      vAxis: {
+        title: 'Stock'
+      },
+      legend: {
+        position: "none"
+      }
+    };
+
+    var chart = new google.visualization.BarChart(document.getElementById('stock_chart'));
+
+    chart.draw(view, properties);
+    setTimeout(plot, 5000); // refresh the values after every 5 seconds
+  }
+}
